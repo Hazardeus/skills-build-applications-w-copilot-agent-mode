@@ -3,6 +3,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 from .models import User, Team, Activity, Leaderboard, Workout
+from django.conf import settings
+import os
 
 @api_view(['GET'])
 def api_root(request, format=None):
@@ -14,6 +16,13 @@ def api_root(request, format=None):
         'leaderboard': f'{codespace_url}/api/leaderboard/',
         'workouts': f'{codespace_url}/api/workouts/'
     })
+
+# Update ALLOWED_HOSTS to include codespace URL and localhost
+settings.ALLOWED_HOSTS.extend(["automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev", "localhost"])
+
+# Ensure HTTPS issues are avoided
+os.environ['DJANGO_SETTINGS_MODULE'] = 'octofit_tracker.settings'
+settings.SECURE_SSL_REDIRECT = False
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
