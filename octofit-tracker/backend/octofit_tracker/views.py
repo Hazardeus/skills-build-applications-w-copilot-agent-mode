@@ -6,7 +6,7 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    codespace_url = "https://octofit-8000.app.github.dev"  # Replace with actual codespace name
+    codespace_url = "https://automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev"  # Updated codespace URL
     return Response({
         'users': f'{codespace_url}/api/users/',
         'teams': f'{codespace_url}/api/teams/',

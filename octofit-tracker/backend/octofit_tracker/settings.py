@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-25rsll_s*6ml5lv4l$51z6x!y5u_k!11f!hf^1&%q!$syk=ja3
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['octofit-8000.app.github.dev', 'localhost']
+ALLOWED_HOSTS = ['automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,10 +59,6 @@ DATABASES = {
         'ENFORCE_SCHEMA': False,  # Ajout pour éviter les problèmes de validation de schéma
         'CLIENT': {
             'host': 'mongodb://localhost:27017',
-            'username': '',  # Ajouter un nom d'utilisateur si nécessaire
-            'password': '',  # Ajouter un mot de passe si nécessaire
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
         },
     }
 }
