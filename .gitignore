@@ -33,4 +33,4 @@ yarn-error.log*
 __pycache__/
 
 #DB
-/octfit-tracker/backend/db/*
+/octfit-tracker/backend/db/** */
