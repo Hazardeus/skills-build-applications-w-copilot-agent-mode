@@ -56,7 +56,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'octofit_db',
-        'ENFORCE_SCHEMA': False,  # Ajout pour éviter les problèmes de validation de schéma
         'CLIENT': {
             'host': 'mongodb://localhost:27017',
         },
