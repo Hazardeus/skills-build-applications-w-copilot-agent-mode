@@ -4,7 +4,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev/api/users/')
+    fetch('/api/users/')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => console.error('Error fetching users:', error));

@@ -4,7 +4,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev/api/workouts/')
+    fetch('/api/workouts/')
       .then(response => response.json())
       .then(data => setWorkouts(data))
       .catch(error => console.error('Error fetching workouts:', error));
