@@ -1,0 +1,250 @@
+/* Ajout de styles pour améliorer l'apparence */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f8ff; /* Bleu clair */
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #4682b4; /* Bleu acier */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navigation styles */
+nav {
+  background-color: #4682b4; /* Bleu acier */
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f0f8ff; /* Bleu clair */
+  text-decoration: underline;
+}
+
+/* Table styles */
+table {
+  width: 90%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  background-color: #ffffff; /* Blanc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+table th {
+  background-color: #4682b4; /* Bleu acier */
+  color: white;
+  font-size: 1.2rem;
+}
+
+table tr:nth-child(even) {
+  background-color: #f0f8ff; /* Bleu clair */
+}
+
+table tr:hover {
+  background-color: #e0ffff; /* Cyan clair */
+}
+
+/* Button styles */
+button {
+  background-color: #4682b4; /* Bleu acier */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: #5a9bd4; /* Bleu acier plus clair */
+}
+
+.full-screen-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* You can change this to any color you like */
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  transition: transform 0.3s;
+  border-radius: 8px;
+}
+
+button:hover::after {
+  transform: scale(1);
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: #4682b4; /* Bleu foncé */
+}
+
+/* Link styles */
+a {
+  color: #4682b4; /* Bleu acier */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Form styles */
+form {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff; /* Blanc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00008b; /* Bleu foncé */
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  border-color: #4682b4; /* Bleu acier */
+  outline: none;
+  box-shadow: 0 0 5px rgba(70, 130, 180, 0.5);
+}
+
+form button {
+  background-color: #4682b4; /* Bleu acier */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #5a9bd4; /* Bleu acier plus clair */
+}
+
+/* Card styles */
+.card {
+  background-color: #ffffff; /* Blanc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: #4682b4; /* Bleu acier */
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.container {
+  max-width: 100% !important;
+}
+
