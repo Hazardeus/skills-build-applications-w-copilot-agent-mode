@@ -11,23 +11,18 @@ function Teams() {
   }, []);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h1 className="card-title">Teams</h1>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Team Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            {teams.map(team => (
-              <tr key={team._id}>
-                <td>{team.name}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Teams</h1>
+      <div className="row">
+        {teams.map(team => (
+          <div className="col-md-4 mb-4" key={team._id}>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{team.name}</h5>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

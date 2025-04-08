@@ -5,31 +5,25 @@ function Activities() {
 
   useEffect(() => {
     fetch('/api/activities/')
-    .then(response => response.json())
-    .then(data => setActivities(data))
-    .catch(error => console.error('Error fetching activities:', error));
+      .then(response => response.json())
+      .then(data => setActivities(data))
+      .catch(error => console.error('Error fetching activities:', error));
   }, []);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h1 className="card-title">Activities</h1>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Activity Type</th>
-              <th>Duration</th>
-            </tr>
-          </thead>
-          <tbody>
-            {activities.map(activity => (
-              <tr key={activity._id}>
-                <td>{activity.activity_type}</td>
-                <td>{activity.duration}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Activities</h1>
+      <div className="row">
+        {activities.map(activity => (
+          <div className="col-md-4 mb-4" key={activity._id}>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{activity.activity_type}</h5>
+                <p className="card-text">Duration: {activity.duration} minutes</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -11,25 +11,19 @@ function Workouts() {
   }, []);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h1 className="card-title">Workouts</h1>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {workouts.map(workout => (
-              <tr key={workout._id}>
-                <td>{workout.name}</td>
-                <td>{workout.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Workouts</h1>
+      <div className="row">
+        {workouts.map(workout => (
+          <div className="col-md-4 mb-4" key={workout._id}>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{workout.name}</h5>
+                <p className="card-text">{workout.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
