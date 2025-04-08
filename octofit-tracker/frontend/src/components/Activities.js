@@ -4,7 +4,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('/api/activities/')
+    fetch('https://automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev/api/activities/')
     .then(response => response.json())
     .then(data => setActivities(data))
     .catch(error => console.error('Error fetching activities:', error));
