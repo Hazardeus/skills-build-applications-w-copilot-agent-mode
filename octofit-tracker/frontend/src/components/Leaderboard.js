@@ -1,36 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    fetch('https://automatic-funicular-4p4x4rw9r63jv4p-8000.app.github.dev/api/leaderboard')
+    fetch('/api/leaderboard/')
       .then(response => response.json())
-      .then(data => setLeaderboard(data));
+      .then(data => setLeaderboard(data))
+      .catch(error => console.error('Error fetching leaderboard:', error));
   }, []);
 
   return (
-    <div className="container mt-4">
-      <h1 className="mb-4">Leaderboard</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          {leaderboard.map(entry => (
-            <tr key={entry.id}>
-              <td>{entry.id}</td>
-              <td>{entry.name}</td>
-              <td>{entry.score}</td>
+    <div className="card">
+      <div className="card-body">
+        <h1 className="card-title">Leaderboard</h1>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Score</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {leaderboard.map(entry => (
+              <tr key={entry._id}>
+                <td>{entry.user.username}</td>
+                <td>{entry.score}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
