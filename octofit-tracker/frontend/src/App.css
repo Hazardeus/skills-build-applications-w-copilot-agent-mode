@@ -127,6 +127,15 @@ button:hover {
   background-color: #5a9bd4; /* Bleu acier plus clair */
 }
 
+.full-screen-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* You can change this to any color you like */
+}
+
 button::after {
   content: '';
   position: absolute;
@@ -146,7 +155,7 @@ button:hover::after {
 
 /* Heading styles */
 h1, h2, h3, h4, h5, h6 {
-  color: #00008b; /* Bleu foncé */
+  color: #4682b4; /* Bleu foncé */
 }
 
 /* Link styles */
@@ -234,3 +243,8 @@ form button:hover {
   font-size: 1rem;
   color: #333;
 }
+
+.container {
+  max-width: 100% !important;
+}
+

@@ -11,25 +11,19 @@ function Leaderboard() {
   }, []);
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h1 className="card-title">Leaderboard</h1>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            {leaderboard.map(entry => (
-              <tr key={entry._id}>
-                <td>{entry.user.username}</td>
-                <td>{entry.score}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Leaderboard</h1>
+      <div className="row">
+        {leaderboard.map(entry => (
+          <div className="col-md-4 mb-4" key={entry._id}>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{entry.user.username}</h5>
+                <p className="card-text">Score: {entry.score}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

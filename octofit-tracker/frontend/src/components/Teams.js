@@ -16,7 +16,7 @@ function Teams() {
       <div className="row">
         {teams.map(team => (
           <div className="col-md-4 mb-4" key={team._id}>
-            <div className="card">
+            <div className="card text-center">
               <div className="card-body">
                 <h5 className="card-title">{team.name}</h5>
               </div>
